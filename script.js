@@ -1,35 +1,16 @@
-// Basic ticker rotation - replace with API later
-const tickerContent = document.getElementById('ticker-content');
-const spotlightContent = document.getElementById('spotlight-content');
+// Basic ticker animation
+const ticker = document.getElementById('ticker-content');
+ticker.style.animation = 'scroll 20s linear infinite';
 
-const tickerItems = [
-    "BTC: $94K—still overpriced hype",
-    "ETH: $2.5K—Vitalik’s tears incoming",
-    "DOGE: $0.12—Elon’s pumping it again, lord help us"
-];
-
-// Simple spotlight rotation - expand later
-const spotlightItems = [
+// Spotlight rotator (example)
+const spotlight = document.getElementById('spotlight-content');
+const updates = [
     "Solana’s down 15%, someone check Vitalik’s alibi.",
-    "New memecoin scam: CumFrog—100% fuckery guaranteed.",
-    "Trump’s crypto reserve: bold or bullshit?"
+    "Bitcoin pumps while altcoins eat dirt—same old shit.",
+    "Polygon’s gas fees laugh at Ethereum’s corpse."
 ];
-
-let tickerIndex = 0;
-let spotlightIndex = 0;
-
-function updateTicker() {
-    tickerContent.textContent = tickerItems[tickerIndex];
-    tickerIndex = (tickerIndex + 1) % tickerItems.length;
-}
-
-function updateSpotlight() {
-    spotlightContent.textContent = spotlightItems[spotlightIndex];
-    spotlightIndex = (spotlightIndex + 1) % spotlightItems.length;
-    setTimeout(updateSpotlight, 5000); // Rotate every 5 seconds
-}
-
-// Kick it off
-updateTicker();
-setInterval(updateTicker, 5000); // Ticker swaps every 5 sec
-updateSpotlight();
+let index = 0;
+setInterval(() => {
+    spotlight.textContent = updates[index];
+    index = (index + 1) % updates.length;
+}, 5000);

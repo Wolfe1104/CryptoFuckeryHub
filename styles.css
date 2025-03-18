@@ -27,13 +27,13 @@ header {
 }
 
 .logo-img {
-    width: 50px;
+    width: 300px; /* Massive logo */
     height: auto;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 3em; /* Bigger to match the logo */
     color: #ff00ff;
     text-shadow: 0 0 10px #ff00ff;
 }
@@ -150,4 +150,5 @@ h2 {
     .article h3 { font-size: 1.4em; }
     .article-img { max-width: 100%; margin: 0 auto 20px; }
     .quick-nav { flex-direction: column; align-items: center; }
+    .logo-img { width: 200px; } /* Scale down for mobile */
 }

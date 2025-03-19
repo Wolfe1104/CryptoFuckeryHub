@@ -79,7 +79,7 @@ main {
 }
 
 .spotlight-img {
-    width: 100px; /* Smaller than logo, but punchy */
+    width: 300px; /* Smaller than logo, but punchy */
     height: auto;
     margin-right: 20px;
 }

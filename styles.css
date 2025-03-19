@@ -39,9 +39,10 @@ h1 {
 }
 
 main {
-    max-width: 1200px;
-    margin: 0 auto;
+    background: #000;
     padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ff00ff;
 }
 
 .intro {

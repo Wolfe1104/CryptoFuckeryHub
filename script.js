@@ -1,16 +1,48 @@
-// Basic ticker animation
-const ticker = document.getElementById('ticker-content');
-ticker.style.animation = 'scroll 20s linear infinite';
+// Coinbase API Live Ticker
+async function fetchCoinbaseTicker() {
+    try {
+        const response = await fetch('https://api.coinbase.com/v2/prices/BTC-USD/spot');
+        const data = await response.json();
+        const btcPrice = data.data.amount;
+        document.getElementById('live-ticker').innerHTML = `BTC: $${btcPrice} | ETH: Loading... (Coinbase API)`;
+        
+        // Add ETH price (example, adjust endpoint as needed)
+        const ethResponse = await fetch('https://api.coinbase.com/v2/prices/ETH-USD/spot');
+        const ethData = await ethResponse.json();
+        const ethPrice = ethData.data.amount;
+        document.getElementById('live-ticker').innerHTML = `BTC: $${btcPrice} | ETH: $${ethPrice} (Live from Coinbase API)`;
+    } catch (error) {
+        document.getElementById('live-ticker').innerHTML = 'Coinbase API Error - Check Console';
+        console.error('Ticker Fetch Error:', error);
+    }
+}
+fetchCoinbaseTicker();
+setInterval(fetchCoinbaseTicker, 60000); // Update every minute
 
-// Spotlight rotator (example)
-const spotlight = document.getElementById('spotlight-content');
-const updates = [
-    "Solana’s down 15%, someone check Vitalik’s alibi.",
-    "Bitcoin pumps while altcoins eat dirt—same old shit.",
-    "Polygon’s gas fees laugh at Ethereum’s corpse."
-];
-let index = 0;
-setInterval(() => {
-    spotlight.textContent = updates[index];
-    index = (index + 1) % updates.length;
-}, 5000);
+// Login Toggle
+document.getElementById('login-btn').addEventListener('click', () => {
+    const form = document.getElementById('login-form');
+    form.classList.toggle('hidden');
+});
+
+// Dummy Login Function
+function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    if (username && password) {
+        alert(`Logged in as ${username} - Welcome to the Fuckery!`);
+        document.getElementById('login-form').classList.add('hidden');
+    } else {
+        alert('Fill in the damn fields, asshole!');
+    }
+}
+
+// Newsletter Signup
+document.getElementById('newsletter-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    if (email) {
+        alert(`Thanks for signing up, ${email}! Prepare for crypto chaos in your inbox.`);
+        document.getElementById('email').value = '';
+    }
+});

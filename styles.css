@@ -28,7 +28,7 @@ header {
 }
 
 .logo-img {
-    width: 400px; /* Bigger logo */
+    width: 400px; /* Already big */
     height: auto;
     margin-right: 20px;
 }
@@ -159,7 +159,7 @@ main {
 }
 
 .spotlight-img {
-    width: 200px; /* Bigger image */
+    width: 400px; /* Much bigger now */
     height: auto;
     margin-right: 20px;
 }
@@ -211,7 +211,7 @@ h2 {
 }
 
 .article-img {
-    max-width: 70%; /* Bigger images */
+    max-width: 70%;
     height: auto;
     display: block;
     margin: 20px auto;
@@ -272,7 +272,7 @@ h2 {
     .professional-article h3 { font-size: 1.6em; }
     .article-img { max-width: 100%; margin: 20px auto; }
     .logo-img { width: 250px; }
-    .spotlight-img { width: 150px; }
+    .spotlight-img { width: 300px; } /* Still big on mobile */
     .fuckery-item h3 { font-size: 1.3em; }
     .dropdown { position: static; margin-bottom: 20px; }
     .user-auth { position: static; margin-top: 20px; }

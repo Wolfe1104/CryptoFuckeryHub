@@ -6,18 +6,22 @@ async function fetchCoinbaseTicker() {
         if (!btcResponse.ok) throw new Error('BTC API call failed');
         const btcData = await btcResponse.json();
         const btcPrice = parseFloat(btcData.data.amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById('live-ticker-btc').textContent = `BTC/USD: $${btcPrice}`;
 
         // Fetch ETH price
         const ethResponse = await fetch('https://api.coinbase.com/v2/prices/ETH-USD/spot');
         if (!ethResponse.ok) throw new Error('ETH API call failed');
         const ethData = await ethResponse.json();
         const ethPrice = parseFloat(ethData.data.amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById('live-ticker-eth').textContent = `ETH/USD: $${ethPrice}`;
 
-        // Update ticker with formatted prices and timestamp
+        // Update status with timestamp
         const now = new Date().toLocaleTimeString('en-US', { hour12: true });
-        document.getElementById('live-ticker').innerHTML = `BTC: $${btcPrice} | ETH: $${ethPrice} | Live Coinbase Feed - Updated ${now}`;
+        document.getElementById('ticker-status').textContent = `Powered by Coinbase API | Last Updated: ${now}`;
     } catch (error) {
-        document.getElementById('live-ticker').innerHTML = 'Coinbase API Down - Check Back Soon';
+        document.getElementById('live-ticker-btc').textContent = 'BTC: API Error';
+        document.getElementById('live-ticker-eth').textContent = 'ETH: API Error';
+        document.getElementById('ticker-status').textContent = 'Coinbase API Offline - Retry Later';
         console.error('Ticker Fetch Error:', error);
     }
 }

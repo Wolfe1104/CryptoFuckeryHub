@@ -6,7 +6,6 @@ async function fetchCoinbaseTicker() {
         const btcPrice = data.data.amount;
         document.getElementById('live-ticker').innerHTML = `BTC: $${btcPrice} | ETH: Loading... (Coinbase API)`;
         
-        // Add ETH price (example, adjust endpoint as needed)
         const ethResponse = await fetch('https://api.coinbase.com/v2/prices/ETH-USD/spot');
         const ethData = await ethResponse.json();
         const ethPrice = ethData.data.amount;
@@ -17,7 +16,7 @@ async function fetchCoinbaseTicker() {
     }
 }
 fetchCoinbaseTicker();
-setInterval(fetchCoinbaseTicker, 60000); // Update every minute
+setInterval(fetchCoinbaseTicker, 60000);
 
 // Login Toggle
 document.getElementById('login-btn').addEventListener('click', () => {

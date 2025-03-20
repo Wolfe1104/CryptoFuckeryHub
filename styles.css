@@ -28,7 +28,7 @@ header {
 }
 
 .logo-img {
-    width: 400px; /* Already big */
+    width: 400px;
     height: auto;
     margin-right: 20px;
 }
@@ -136,11 +136,49 @@ main {
 }
 
 .ticker {
-    background: #333;
-    padding: 15px;
+    background: #222;
+    padding: 20px;
     margin-bottom: 40px;
-    font-size: 1.2em;
+    border: 2px solid #ff00ff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.ticker-title {
+    font-size: 1.8em;
+    color: #00ffff;
     text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.ticker-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ticker-item {
+    background: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: #fff;
+    flex: 1;
+    text-align: center;
+    min-width: 200px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.ticker-status {
+    font-size: 0.9em;
+    color: #ff00ff;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    text-shadow: 0 0 5px #ff00ff;
 }
 
 .spotlight {
@@ -159,7 +197,7 @@ main {
 }
 
 .spotlight-img {
-    width: 400px; /* Much bigger now */
+    width: 400px;
     height: auto;
     margin-right: 20px;
 }
@@ -272,11 +310,13 @@ h2 {
     .professional-article h3 { font-size: 1.6em; }
     .article-img { max-width: 100%; margin: 20px auto; }
     .logo-img { width: 250px; }
-    .spotlight-img { width: 300px; } /* Still big on mobile */
+    .spotlight-img { width: 300px; }
     .fuckery-item h3 { font-size: 1.3em; }
     .dropdown { position: static; margin-bottom: 20px; }
     .user-auth { position: static; margin-top: 20px; }
     .auth-form { position: static; }
     #newsletter-form { flex-direction: column; }
     #email { width: 100%; }
+    .ticker-container { flex-direction: column; }
+    .ticker-item { min-width: 100%; }
 }

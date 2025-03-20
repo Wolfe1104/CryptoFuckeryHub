@@ -1,22 +1,30 @@
-// Coinbase API Live Ticker
+// Coinbase API Live Ticker Setup
 async function fetchCoinbaseTicker() {
     try {
-        const response = await fetch('https://api.coinbase.com/v2/prices/BTC-USD/spot');
-        const data = await response.json();
-        const btcPrice = data.data.amount;
-        document.getElementById('live-ticker').innerHTML = `BTC: $${btcPrice} | ETH: Loading... (Coinbase API)`;
-        
+        // Fetch BTC price
+        const btcResponse = await fetch('https://api.coinbase.com/v2/prices/BTC-USD/spot');
+        if (!btcResponse.ok) throw new Error('BTC API call failed');
+        const btcData = await btcResponse.json();
+        const btcPrice = parseFloat(btcData.data.amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+        // Fetch ETH price
         const ethResponse = await fetch('https://api.coinbase.com/v2/prices/ETH-USD/spot');
+        if (!ethResponse.ok) throw new Error('ETH API call failed');
         const ethData = await ethResponse.json();
-        const ethPrice = ethData.data.amount;
-        document.getElementById('live-ticker').innerHTML = `BTC: $${btcPrice} | ETH: $${ethPrice} (Live from Coinbase API)`;
+        const ethPrice = parseFloat(ethData.data.amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+        // Update ticker with formatted prices and timestamp
+        const now = new Date().toLocaleTimeString('en-US', { hour12: true });
+        document.getElementById('live-ticker').innerHTML = `BTC: $${btcPrice} | ETH: $${ethPrice} | Live Coinbase Feed - Updated ${now}`;
     } catch (error) {
-        document.getElementById('live-ticker').innerHTML = 'Coinbase API Error - Check Console';
+        document.getElementById('live-ticker').innerHTML = 'Coinbase API Down - Check Back Soon';
         console.error('Ticker Fetch Error:', error);
     }
 }
+
+// Initial fetch and refresh every 30 seconds
 fetchCoinbaseTicker();
-setInterval(fetchCoinbaseTicker, 60000);
+setInterval(fetchCoinbaseTicker, 30000);
 
 // Login Toggle
 document.getElementById('login-btn').addEventListener('click', () => {

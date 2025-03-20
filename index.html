@@ -10,8 +10,25 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="logo.jpg" alt="CryptoFuckeryHub Logo" class="logo-img">
+            <img src="logo-fractal-chaos.png" alt="CryptoFuckeryHub Logo" class="logo-img">
             <h1>CryptoFuckeryHub</h1>
+        </div>
+        <nav class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="news.html">News</a>
+                <a href="presales.html">Presales</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+            </div>
+        </nav>
+        <div class="user-auth">
+            <button id="login-btn">Login</button>
+            <div id="login-form" class="auth-form hidden">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+                <button onclick="login()">Submit</button>
+            </div>
         </div>
     </header>
     <main>
@@ -19,48 +36,66 @@
             <p>CryptoFuckeryHub—ripping the chains off the blockchain, exposing the truth, the bullshit, and the hype with nothing but savage takes and news that shatters. We’re locked on the prize, tearing through the crypto swamp with a snarl and a middle finger—get in or get fucked.</p>
         </section>
         <section class="ticker">
-            <div id="ticker-content">BTC: $94K—still overpriced hype | ETH: $2.5K—Vitalik’s tears incoming</div>
+            <div id="live-ticker">Loading Coinbase API data...</div>
         </section>
         <section class="spotlight">
             <div class="spotlight-container">
-                <img src="todaysfuckery.jpg" alt="Today's Fuckery Image" class="spotlight-img left">
+                <img src="todaysfuckery.jpg" alt="Today's Fuckery Image" class="spotlight-img">
                 <h2>Today’s Fuckery</h2>
             </div>
-            <div id="spotlight-content">Solana’s down 15%, someone check Vitalik’s alibi.</div>
+            <div id="spotlight-content">
+                <div class="fuckery-item">
+                    <h3>Solana’s Bleeding Out</h3>
+                    <p>Solana’s down 15% overnight—another “fastest blockchain” promise choking on its own hype. Degens on X are screaming “buy the dip,” but the charts look like a fucking slaughterhouse. Someone tell Vitalik it’s time to send flowers—or a rug-pull manual.</p>
+                </div>
+                <div class="fuckery-item">
+                    <h3>Bitcoin’s $94K Circlejerk</h3>
+                    <p>BTC’s hovering at $94K, and the maxis are jizzing themselves over “new ATHs” while altcoins eat dirt. Meanwhile, miners are dumping like it’s 2018, and whales are laughing all the way to the bank. This pump’s got more hot air than a shitcoin whitepaper.</p>
+                </div>
+                <div class="fuckery-item">
+                    <h3>SEC’s Latest Shitshow</h3>
+                    <p>The SEC’s back at it, slapping cease-and-desists on anything that moves—latest victim’s some DeFi protocol nobody’s heard of. Gary Gensler’s wet dream: a crypto graveyard where dollars burn and coins shatter. Good luck, you regulatory fuckwits—blockchain don’t care.</p>
+                </div>
+                <div class="fuckery-item">
+                    <h3>Ethereum’s Gas Hell</h3>
+                    <p>ETH gas fees spiked to $50 a pop—Vitalik’s “world computer” is more like a rich kid’s slot machine. NFT mints are dead, traders are broke, and Polygon’s laughing its ass off. Time to burn some more ETH or just burn the whole damn thing down?</p>
+                </div>
+            </div>
         </section>
         <section class="beast-pick">
             <h2>Beast Pick: Hottest Legit Coin</h2>
-            <div class="article">
-                <h3>$Doji (DOJI) - The 40x Polygon Firestorm</h3>
+            <article class="professional-article">
+                <h3>$Doji (DOJI) - A Polygon-Powered 40x Opportunity</h3>
                 <img src="doji-pic1.jpg" alt="$Doji Logo" class="article-img left">
-                <p>Listen up, you degenerate fucks—<strong>$Doji (DOJI)</strong> is torching Polygon like a goddamn wildfire. Its 13-stage presale’s in Stage 1, 50% sold at a dirt-cheap $0.0005 USD per token. Listing’s set at $0.02 USD—a 40x ass-kicker that’ll leave you broke or ballin’. Polygon’s the arena ‘cause Ethereum’s gas can suck a fat one, making $Doji the nastiest bastard of 2025. <a href="http://www.dojiwan.com" target="_blank">Hit that presale</a>—don’t bitch out.</p>
+                <p>In the volatile expanse of cryptocurrency markets, few projects ignite intrigue like <strong>$Doji (DOJI)</strong>. Currently in Stage 1 of a 13-stage presale, with 50% already sold at $0.0005 USD per token, $Doji is poised for a staggering 40x leap to a $0.02 USD listing price. Built on Polygon—Ethereum’s leaner, meaner sibling—this token leverages low-cost, high-speed infrastructure to deliver a compelling value proposition in 2025’s chaotic landscape. <a href="http://www.dojiwan.com" target="_blank">Join the presale now</a> and stake your claim before the fire spreads.</p>
                 
-                <p>$Doji’s a memecoin Molotov—13 stages of mayhem, Stage 1 half ashes at $0.0005 USD. That 40x leap to $0.02 listing is a bloodbath in waiting, and they’re burning unsold tokens at launch—maybe 50 million if the degens don’t buy it all. Polygon’s cheap rails mean this fucker’s built to blaze.</p>
+                <p>The mechanics are ruthless yet elegant: a 1 billion total supply, with 25% (250 million tokens) allocated to the presale. Stage 1’s momentum signals strong early demand, and unsold tokens face the torch post-launch—potentially 50 million SDOJI up in smoke if adoption lags. This burn mechanism, paired with Polygon’s scalability, positions $Doji as a memecoin with teeth, ready to carve its niche amid Ethereum’s gas-choked struggles.</p>
                 
                 <img src="doji-pic2.jpg" alt="$Doji Meme Art" class="article-img right">
-                <p>The art’s a goddamn riot—Shiba Inu with a Polygon torch, lighting up the bear market’s corpse. This ain’t a coin; it’s a fucking inferno, and Stage 1’s your shot at the flames. <a href="http://www.dojiwan.com" target="_blank">Jump in now</a> before the whales turn it to ash.</p>
+                <p>Visually, $Doji doesn’t fuck around. Its branding—a Shiba Inu wielding a Polygon torch—channels the absurdity and defiance of crypto culture, igniting the bear market’s ashes. This isn’t just a token; it’s a rallying cry for those who thrive on calculated risk. <a href="http://www.dojiwan.com" target="_blank">Secure your position</a> before whales sweep the board.</p>
                 
-                <p>No rug-pull horseshit—$Doji’s Presale13 is raw: $0.0005 USD now, $0.02 listing, 40x locked in, plus a potential 50M token bonfire. Polygon’s fast and cheap, shitting on Ethereum’s bloated carcass. <a href="http://www.dojiwan.com" target="_blank">Get in the fight</a>—CryptoFuckeryHub’s calling this the beast of beasts.</p>
+                <p>Transparency anchors its appeal: no rug-pull shadows here. The presale structure—$0.0005 now, $0.02 at listing—locks in a 40x upside, with Polygon’s efficiency as the backbone. The team’s allocation (15%) and roadmap funding (20%) are standard, but the potential 50M token burn adds a savage twist. <a href="http://www.dojiwan.com" target="_blank">Dive into the details</a>—CryptoFuckeryHub deems this the apex predator of presales.</p>
                 
                 <img src="doji-pic3.jpg" alt="$Doji Community" class="article-img left">
-                <p>$Doji’s crew is a pack of pyros—X is screaming “40x or bust,” Telegram’s a fucking furnace of hype. This ain’t a flicker; it’s a 13-stage blaze with a 50M burn tease. Bitcoin’s at $94K, Ethereum’s choking, and $Doji’s here to roast ‘em. <a href="http://www.dojiwan.com" target="_blank">Presale’s live</a>—move it.</p>
+                <p>The community’s a furnace—X posts roar “40x or bust,” Telegram channels blaze with hype. This isn’t a flicker; it’s a 13-stage inferno. With Bitcoin at $94K and Ethereum gasping, $Doji’s timing is impeccable—Polygon’s edge amplifies its roar. <a href="http://www.dojiwan.com" target="_blank">Act now</a>—the presale’s live and unrelenting.</p>
                 
-                <p>The math’s a bitch—$0.0005 to $0.02, 40x from Stage 1, half gone, and maybe 50M SDOJI up in smoke. $Doji’s gonna melt Polygon DEXes like napalm. <a href="http://www.dojiwan.com" target="_blank">Snag it now</a>—this is your golden fucking ticket.</p>
+                <p>Numbers don’t lie: $0.0005 to $0.02, half of Stage 1 gone, a possible 50M burn looming. $Doji’s primed to melt Polygon DEXes, a napalm drop in a stagnant pool. <a href="http://www.dojiwan.com" target="_blank">Claim your stake</a>—this is precision-engineered chaos.</p>
                 
                 <img src="doji-pic4.jpg" alt="$Doji Presale Chart" class="article-img right">
-                <p>Stage 1’s a powder keg—50% sold means it’s lit. This is the coin that turns chumps to champs: early fuckers cashing out empires, latecomers eating cinders, 50M burn on the table. <a href="http://www.dojiwan.com" target="_blank">Click that presale</a> and ride the 40x blaze. It’s hot, it’s heavy, and it’s fucking unstoppable.</p>
+                <p>Stage 1’s momentum is undeniable—50% sold signals a lit fuse. Early adopters stand to reap empires; latecomers get ashes. The 40x trajectory, bolstered by a potential burn, makes $Doji a rare breed: a coin with both hype and substance. <a href="http://www.dojiwan.com" target="_blank">Enter the fray</a>—it’s unrelenting and inevitable.</p>
                 
-                <p>Bottom line: $Doji’s the beast pick ‘cause it’s got Polygon’s balls, a 40x presale-to-listing nuke, and a potential 50M token barbecue. You want riches? You want chaos? Then quit jerking off and <a href="http://www.dojiwan.com" target="_blank">dive into the presale</a>. CryptoFuckeryHub’s crowning $Doji the fire-lord of the shitstorm—get in or get burned.</p>
+                <p>Conclusion: $Doji’s fusion of Polygon’s prowess, a 40x presale-to-listing rocket, and a burn wildcard marks it as 2025’s breakout contender. <a href="http://www.dojiwan.com" target="_blank">Join the presale</a>—CryptoFuckeryHub crowns it the fire-lord of this shitstorm. Opportunity knocks; answer or regret.</p>
                 
                 <img src="doji-pic5.jpg" alt="$Doji Moon Vision" class="article-img left">
-            </div>
+            </article>
         </section>
-        <nav class="quick-nav">
-            <a href="news.html" class="nav-button">News</a>
-            <a href="presales.html" class="nav-button">Presales</a>
-            <a href="blog.html" class="nav-button">Blog</a>
-            <a href="tools.html" class="nav-button">Tools</a>
-        </nav>
+        <section class="newsletter">
+            <h2>Sign Up for Our Newsletter</h2>
+            <form id="newsletter-form">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>

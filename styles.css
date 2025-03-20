@@ -16,15 +16,21 @@ body {
 header {
     background: #000;
     padding: 20px;
-    text-align: center;
     border-bottom: 2px solid #ff00ff;
-    position: relative;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -41,9 +47,7 @@ h1 {
 }
 
 .dropdown {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    margin: 0 20px;
 }
 
 .dropbtn {
@@ -81,9 +85,8 @@ h1 {
 }
 
 .user-auth {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    margin: 0 20px;
+    position: relative;
 }
 
 #auth-btn {
@@ -97,7 +100,7 @@ h1 {
 
 .auth-form {
     position: absolute;
-    top: 60px;
+    top: 100%;
     right: 0;
     background: #222;
     padding: 20px;
@@ -188,6 +191,7 @@ main {
     padding: 20px;
     background: #333;
     border-radius: 10px;
+    margin-bottom: 40px;
 }
 
 #newsletter-form {
@@ -212,7 +216,60 @@ main {
     font-weight: bold;
 }
 
+.beast-pick {
+    background: #222;
+    padding: 30px;
+    border: 2px solid #ff00ff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.professional-article h3 {
+    font-size: 2em;
+    color: #00ffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.professional-article p {
+    margin-bottom: 25px;
+    font-size: 1.2em;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.article-img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.left {
+    float: left;
+    margin-right: 30px;
+}
+
+.right {
+    float: right;
+    margin-left: 30px;
+}
+
+.professional-article a {
+    color: #ff00ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.professional-article a:hover {
+    text-shadow: 0 0 5px #ff00ff;
+}
+
 @media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
     .logo-container {
         flex-direction: column;
         align-items: center;
@@ -225,13 +282,8 @@ main {
     h1 {
         font-size: 2em;
     }
-    .dropdown {
-        position: static;
-        margin-bottom: 20px;
-    }
-    .user-auth {
-        position: static;
-        margin-top: 20px;
+    .dropdown, .user-auth {
+        margin: 10px 0;
     }
     .auth-form {
         position: static;
@@ -248,5 +300,9 @@ main {
     }
     #email {
         width: 100%;
+    }
+    .article-img {
+        max-width: 100%;
+        margin: 20px auto;
     }
 }

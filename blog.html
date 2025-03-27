@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - CryptoFuckeryHub</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -47,11 +48,8 @@
         <section id="post-form" class="hidden">
             <h2>Create a Post</h2>
             <form id="create-post-form">
-                <label for="post-title">Title:</label>
-                <input type="text" id="post-title" required>
-                <label for="post-content">Content:</label>
-                <textarea id="post-content" required></textarea>
-                <label for="post-topic">Topic:</label>
+                <input type="text" id="post-title" placeholder="Title" required>
+                <textarea id="post-content" placeholder="Content" required></textarea>
                 <select id="post-topic" required>
                     <option value="Bitcoin">Bitcoin</option>
                     <option value="Ethereum">Ethereum</option>
@@ -67,18 +65,14 @@
                 <button type="submit">Post</button>
             </form>
         </section>
-
-        <div class="blog-content">
-            <div class="posts">
-                <!-- Posts will be inserted here by JavaScript -->
-            </div>
-            <aside class="sidebar">
-                <h3>Recent Posts</h3>
-                <ul id="recent-posts">
-                    <!-- List of recent posts -->
-                </ul>
-            </aside>
-        </div>
+        <section class="blog-posts">
+            <h2>Blog Posts</h2>
+            <div id="posts-container"></div>
+        </section>
+        <aside class="sidebar">
+            <h3>Recent Posts</h3>
+            <ul id="recent-posts"></ul>
+        </aside>
     </main>
 
     <div id="profile-modal" class="modal hidden">
@@ -95,4 +89,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>

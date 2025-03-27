@@ -1,4 +1,3 @@
-// Shared Functionality
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const dropdownContent = document.querySelector('.dropdown-content');

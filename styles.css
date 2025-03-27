@@ -101,10 +101,6 @@ h1 {
 }
 
 /* Authentication Styles */
-.user-auth {
-    /* No specific styles needed */
-}
-
 .auth-form {
     position: absolute;
     right: 20px;

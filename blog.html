@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - CryptoFuckeryHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="CryptoFuckeryHub Logo" class="logo-img">
+                <h1>CryptoFuckeryHub</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search posts...">
+            </div>
+            <nav class="dropdown">
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="index.html">Home</a>
+                    <a href="news.html">News</a>
+                    <a href="presales.html">Presales</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="tools.html">Tools</a>
+                </div>
+            </nav>
+            <div class="user-auth">
+                <button id="auth-btn">Login</button>
+                <div id="auth-form" class="auth-form hidden">
+                    <span class="close">×</span>
+                    <input type="text" id="username" placeholder="Username">
+                    <input type="password" id="password" placeholder="Password">
+                    <button id="login-submit">Login</button>
+                    <button id="signup-submit">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="post-form" class="hidden">
+            <h2>Create a Post</h2>
+            <form id="create-post-form">
+                <label for="post-title">Title:</label>
+                <input type="text" id="post-title" required>
+                <label for="post-content">Content:</label>
+                <textarea id="post-content" required></textarea>
+                <label for="post-topic">Topic:</label>
+                <select id="post-topic" required>
+                    <option value="Bitcoin">Bitcoin</option>
+                    <option value="Ethereum">Ethereum</option>
+                    <option value="Altcoins">Altcoins</option>
+                    <option value="Blockchain">Blockchain</option>
+                    <option value="DeFi">DeFi</option>
+                    <option value="NFTs">NFTs</option>
+                    <option value="Crypto News">Crypto News</option>
+                    <option value="Trading">Trading</option>
+                    <option value="Mining">Mining</option>
+                    <option value="Regulations">Regulations</option>
+                </select>
+                <button type="submit">Post</button>
+            </form>
+        </section>
+
+        <div class="blog-content">
+            <div class="posts">
+                <!-- Posts will be inserted here by JavaScript -->
+            </div>
+            <aside class="sidebar">
+                <h3>Recent Posts</h3>
+                <ul id="recent-posts">
+                    <!-- List of recent posts -->
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <div id="profile-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Profile</h2>
+            <label for="profile-username">Username:</label>
+            <input type="text" id="profile-username" disabled>
+            <label for="profile-email">Email:</label>
+            <input type="email" id="profile-email">
+            <button id="save-profile">Save</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

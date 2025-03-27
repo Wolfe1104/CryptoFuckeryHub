@@ -1,4 +1,4 @@
-Shared Functionality
+// Shared Functionality
 
 // Hamburger Menu Toggle
 const hamburger = document.querySelector('.hamburger');
@@ -196,6 +196,10 @@ if (window.location.pathname.endsWith('blog.html')) {
     // Render posts grouped by topic
     function renderPosts(postsToRender) {
         const postsContainer = document.querySelector('.posts');
+        if (!postsContainer) {
+            console.error('Posts container not found');
+            return;
+        }
         postsContainer.innerHTML = '';
         const groupedPosts = {};
         postsToRender.forEach(post => {
@@ -231,6 +235,10 @@ if (window.location.pathname.endsWith('blog.html')) {
     // Render recent posts in sidebar
     function renderRecentPosts() {
         const recentPostsList = document.getElementById('recent-posts');
+        if (!recentPostsList) {
+            console.error('Recent posts list not found');
+            return;
+        }
         recentPostsList.innerHTML = '';
         const recentPosts = posts.slice().sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)).slice(0, 5);
         recentPosts.forEach(post => {
